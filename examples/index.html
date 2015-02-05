@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="../lib/defer.js"></script>
     <script src="../lib/defer-images.js"></script>
     <script src="../lib/defer-bg.js"></script>
     <script src="../lib/defer-dom.js"></script>
@@ -25,7 +26,7 @@
   <body>
     <div id="container">
       <!-- register derferImages to listen for images added to dom -->
-      <script>defer.images.start(document.getElementById("container"));</script>
+      <script>defer.start(document.getElementById("container"));</script>
 
       <img class="defer" data-src="http://placekitten.com/700/310" height="310" src="placeholder.gif" width="700">
       <img class="defer" data-src="http://placekitten.com/700/370" height="370" src="placeholder.gif" width="700">
@@ -89,7 +90,7 @@
       <img class="defer" data-src="http://placekitten.com/700/420" height="420" src="placeholder.gif" width="700">
       <img class="defer" data-src="http://placekitten.com/700/480" height="480" src="placeholder.gif" width="700">
 
-      <script>defer.images.done();</script>
+      <script>defer.done();</script>
     </div>
   </body>
 </html>

@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         ],
         directives: {
           browser: true,
-          predef: ['window', 'console', 'MutationObserver', 'deferImages', 'deferBg'],
+          predef: ['window', 'console', 'MutationObserver', 'defer'],
           indent: 2,
           regexp: true
         }
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['lib/defer-images.js', 'lib/defer-bg.js', 'lib/defer-dom.js']
+          'dist/<%= pkg.name %>.min.js': ['lib/defer.js', 'lib/defer-images.js', 'lib/defer-bg.js', 'lib/defer-dom.js']
         }
       }
     },
