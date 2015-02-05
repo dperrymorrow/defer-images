@@ -22,7 +22,8 @@ module.exports = function (grunt) {
       options: {
         banner: "/*\n<%= pkg.name %>\nversion: <%= pkg.version %>\ncompiled: <%= grunt.template.today('yyyy-mm-dd') %>\n<%= pkg.author %>\n<%= pkg.repository.url %>\n*/",
         mangle: false,
-        sourceMap: true
+        sourceMap: true,
+        wrap: true,
       },
       my_target: {
         files: {
