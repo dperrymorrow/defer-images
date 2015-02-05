@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        banner: "/*\n<%= pkg.name %>\nversion: <%= pkg.version %>\ncompiled: <%= grunt.template.today('yyyy-mm-dd') %>\n<%= pkg.author %>\n*/",
+        banner: "/*\n<%= pkg.name %>\nversion: <%= pkg.version %>\ncompiled: <%= grunt.template.today('yyyy-mm-dd') %>\n<%= pkg.author %>\n<%= pkg.repository.url %>\n*/",
         mangle: false,
         sourceMap: true
       },
