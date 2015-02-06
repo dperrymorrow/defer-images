@@ -27,7 +27,7 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['lib/defer.js', 'lib/defer-images.js', 'lib/defer-bg.js', 'lib/defer-dom.js']
+          'dist/<%= pkg.name %>.min.js': ['lib/defer.js', 'lib/defer-images.js', 'lib/defer-bg.js']
         }
       }
     },
