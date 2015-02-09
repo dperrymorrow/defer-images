@@ -7,33 +7,28 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
+
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
     preprocessors: {
-      'tests/*.coffee': ['coffee']
+      'tests/*.coffee': ['coffee'],
     },
 
     // list of files / patterns to load in the browser
     files: [
-    'lib/defer.js',
-    'lib/defer-bg.js',
-    'tests/*.coffee'
-
-      // 'lib/base.js',
-      // 'lib/array_ext.js',
-      // 'lib/date_ext.js',
-      // 'lib/object_ext.js',
-      // 'lib/string_ext.js',
-      // // tests
-      // 'tests/*.js'
+      'lib/defer.js',
+      'lib/defer-bg.js',
+      'tests/setup.coffee',
+      'tests/defer-tests.coffee',
+      'tests/defer-bg-tests.coffee',
     ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'osx'],
+    reporters: ['progress'],
 
 
     // web server port
