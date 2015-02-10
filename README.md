@@ -1,7 +1,7 @@
 # defer-images
 
-defers image loading until images are in the view, background loads more images when idle
-[Example here:](http://dperrymorrow.github.io/defer-images/examples/)
+defers image loading until images are in the view, background loads more images when idle.
+>> [Example here:](http://dperrymorrow.github.io/defer-images/examples/)
 
 ## Usage
 
@@ -9,7 +9,8 @@ Change your html so that it has a placeholder instead of the real image you wish
 Be sure to include width and height so that it will take up the space that it will eventually occupy.
 
 ```html
-<img src="placeholder.gif" onload="defer.add(this);" data-src="http://example.com/real-image.gif" width="100" height="50">
+<img src="placeholder.gif" onload="defer.add(this);"
+data-src="http://example.com/real-image.gif" width="100" height="50">
 ```
 
 The load handler will register the image with the defer module.
@@ -18,7 +19,7 @@ This will trigger on the load of the placeholder image, and immediately begin de
 Or if ```onload``` handlers are not your thing, add it directly with javascript on the page after its been added to the DOM.
 
 ```javascript
-var img = document.getElementById({id})
+var img = document.getElementById([id]);
 defer.add(img);
 ```
 
