@@ -26,12 +26,15 @@ defer.add(img);
 ## Building and running the tests
 
 Install grunt and karma cli so you can interact with them on the command line
+
 ```bash
 $ npm install -g grunt-cli
 $ npm install karma-cli -g
+```
 
 Next install required packages for defer-images
-```
+
+```bash
 cd defer-images
 $ npm install
 ```
