@@ -28,7 +28,7 @@ defer.add(img);
 Install grunt and karma cli so you can interact with them on the command line
 
 ```bash
-$ npm install -g grunt-cli
+$ npm install grunt-cli -g
 $ npm install karma-cli -g
 ```
 
