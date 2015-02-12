@@ -67,6 +67,7 @@ describe "Defer Tests", ->
   describe "finds images to laod in the bg", ->
 
     beforeEach ->
+      defer.active = true
       setup()
       defer.bg.batchSize = 5
       defer.bg.findImgs()
@@ -80,6 +81,7 @@ describe "Defer Tests", ->
 
     it "should set to 0 when full", ->
       expect(defer.bg.found).toEqual 0
+      
 
 
 

@@ -27,16 +27,27 @@ module.exports = function (grunt) {
       },
       my_target: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['lib/defer.js', 'lib/defer-images.js', 'lib/defer-bg.js']
+          'dist/<%= pkg.name %>.min.js': ['lib/defer.js', 'lib/defer-images.js', 'lib/defer-bg.js'],
         }
       }
     },
+    
+    concat: {
+      dist: {
+        src: [
+          'lib/defer.js',
+          'lib/defer-bg.js'
+        ],
+        dest: 'dist/<%= pkg.name %>.js'
+      }
+    }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-jslint'); // load the task
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('build', ['jslint', 'uglify', 'concat']);
   grunt.registerTask('default', 'jslint');
 };

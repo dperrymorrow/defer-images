@@ -15,9 +15,10 @@ describe "Defer Tests", ->
 
     it "sets defer propterties", ->
       expect(imgs[0].defer.src).not.toBeUndefined
-      expect(imgs[0].defer.loading).toBe false
-      expect(imgs[0].defer.loaded).toBe false
+      expect(imgs[0].defer.loading).not.toBeUndefined
+      expect(imgs[0].defer.loaded).not.toBeUndefined
       expect(imgs[0].defer.index).not.toBeUndefined
+      
 
     it "calls listen", ->
       expect(defer.listen.calls.any()).toBeTrue
@@ -29,14 +30,14 @@ describe "Defer Tests", ->
       defer.loadImg imgs[0]
 
     it 'calls hander on load', ->
-      imgs[0].onload()
+      $(imgs[0]).trigger('load')
       expect(defer.imgLoaded).toHaveBeenCalled
 
     it 'a load error will not hang up the que', ->
       count = defer.loading
       defer.loadImg imgs[5]
       expect(defer.loading).toEqual count + 1
-      imgs[5].onerror()
+      defer.imgError()
       expect(defer.loading).toEqual count
 
     it 'sets the data-src to src on load', ->
@@ -48,7 +49,6 @@ describe "Defer Tests", ->
 
     it 'clears the array when called', ->
       expect(defer.removeLoaded).toHaveBeenCalled
-
 
   describe 'removing loaded', ->
     it 'removes all imgs that are loaded', ->
@@ -81,6 +81,8 @@ describe "Defer Tests", ->
     it 'sets all in when window is done', ->
       defer.allIn = false
       defer.listen()
-      window.onload()
+      $(window).trigger('load')
       expect(defer.allIn).toBeTrue
+      
+
 

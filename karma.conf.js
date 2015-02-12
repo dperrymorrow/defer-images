@@ -20,6 +20,7 @@ module.exports = function(config) {
     files: [
       'lib/defer.js',
       'lib/defer-bg.js',
+      'tests/jquery.js',
       'tests/setup.coffee',
       'tests/defer-tests.coffee',
       'tests/defer-bg-tests.coffee',
