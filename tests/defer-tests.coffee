@@ -3,7 +3,7 @@ describe "Defer Tests", ->
   imgs = []
 
   beforeEach ->
-    defer.showConsole = false
+    defer.showConsole = true
     imgs = setup()
 
   afterEach ->
@@ -83,6 +83,6 @@ describe "Defer Tests", ->
       defer.listen()
       $(window).trigger('load')
       expect(defer.allIn).toBeTrue
-      
+          
 
 
