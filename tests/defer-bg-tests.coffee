@@ -52,6 +52,11 @@ describe "Defer Tests", ->
       defer.loadTimes = [0, 0, 0, 50]
       defer.bg.findSpeed()
       expect(Math.round(defer.bg.avg)).toEqual 50
+      
+     it 'does not divide by full count if items 0', ->
+      defer.loadTimes = [NaN, NaN, 0, 0]
+      defer.bg.findSpeed()
+      expect(defer.bg.avg).toEqual 0
 
 
   describe "finds the right batch size based on speed", ->

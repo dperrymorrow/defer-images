@@ -21,7 +21,7 @@
     },
 
     addCallback: function (callback) {
-      this.loadCallback = callback;
+      this.callback = callback;
     },
 
     winLoaded: function () {
@@ -279,7 +279,7 @@
         }
       }
 
-      this.avg = (sum / div).toPrecision(5);
+      this.avg = div > 0 ? (sum / div).toPrecision(5) : 0;
       defer.trace(this.avg + " avg DL time");
 
       for (i = 0; i < this.speeds.length; i += 1) {
