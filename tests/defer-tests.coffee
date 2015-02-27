@@ -58,13 +58,11 @@ describe "Defer Tests", ->
       defer.removeLoaded()
       expect(defer.imgs).toBeEmpty
 
-
     it 'shuts down if imgs empty and allIn', ->
       spyOn defer, 'destroy'
       defer.allIn = true;
       defer.imgs = []
       expect(defer.destroy).toHaveBeenCalled
-
 
   describe 'searching the viewport', ->
     beforeEach ->

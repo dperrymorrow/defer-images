@@ -5,9 +5,11 @@
     debug: [],
     imgs: [],
     loadTimes: [],
-    showConsole: true,
+    showConsole: false,
     allIn: false,
     dur: 200,
+    domWait: 2000,
+    domTimer: null,
     int: 0,
     loading: 0,
     loaded: 0,
@@ -17,7 +19,7 @@
     listen: function () {
       this.active = true;
       this.addEvent(window, 'load', this.winLoaded);
-      this.int = setInterval(this.run, this.dur);
+      this.run();
     },
 
     addCallback: function (callback) {
@@ -43,6 +45,8 @@
       if (defer.loading === 0) {
         defer.bg.check();
       }
+
+      setTimeout(defer.run, this.dur);
     },
 
     add: function (el) {
@@ -55,12 +59,17 @@
 
       this.imgs.push(el);
 
+      if (this.domTimer) {
+        clearInterval(this.domTimer);
+      }
+
+      this.domTimer = setTimeout(defer.winLoaded, this.domWait);
+
       if (!this.browserSupports()) {
         this.loadImg(el);
 
       } else if (!this.active) {
         this.listen();
-        this.run();
       }
     },
 
