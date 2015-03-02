@@ -294,7 +294,7 @@
       for (i = 0; i < this.speeds.length; i += 1) {
         group = this.speeds[i];
         if (this.avg > group.speed) {
-          // defer.trace(group.lbl + " speed determined");
+          defer.trace(group.lbl + " speed determined");
           this.batchSize = group.batch;
           break;
         }
