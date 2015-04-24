@@ -75,12 +75,6 @@ describe "Defer Tests", ->
     it 'incriments the loading counter', ->
       expect(defer.loading).toEqual imgs.length
 
-  describe 'all in set on load', ->
-    it 'sets all in when window is done', ->
-      defer.allIn = false
-      defer.listen()
-      $(window).trigger('load')
-      expect(defer.allIn).toBeTrue
           
 
 
